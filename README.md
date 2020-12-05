@@ -3,5 +3,4 @@
 
 
 
-QUE DIABO É ISSO?
-nãoseiaaaa
+um lugar para códigos e estudos :D
