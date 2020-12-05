@@ -15,7 +15,7 @@ ele pode brigar,perder o rabo,e correr.
 link do jogo:
 https://breno-marinho-1.itch.io/simulador-de-calango-breno
 
-eu curto muito tentar transformas coisas dos códigos em algo visual,me diverte bastante. 
+foi um teste bem bobinho,mas foi legal,eu curto muito tentar transformas coisas dos códigos em algo visual,me diverte bastante. 
 
 //--------------------------------Sobre o projeto 02 -----------------------------------------------------
 
