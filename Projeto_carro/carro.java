@@ -18,25 +18,28 @@ carro(int pessoas_no_carro,int gas,int km,int q_gas,int q_km){
 }
 	
 
-void embarcar() {
+void embarcar() 
+{
 	pessoas_no_carro += 1;
 	if(pessoas_no_carro == 3){
 		pessoas_no_carro = 2;
-		System.out.println("limite de pessoas atingido,sÛ podem 2 pessoas no carro");
+		System.out.println("limite de pessoas atingido,s√≥ podem 2 pessoas no carro");
 	}
 	
 }
 
-void desembarcar() {
+void desembarcar() 
+{
 	pessoas_no_carro -= 1;
 	if(pessoas_no_carro < 0)
 	{
 		pessoas_no_carro = 0;
-		System.out.println("n„o tem ninguÈm no carro");
+		System.out.println("n√£o tem ningu√©m no carro");
 	}
 }
 
-void abastecer(int n_gas) {
+void abastecer(int n_gas) 
+{
 	//SOMA O GAS
 	gas += n_gas;
 	
@@ -54,7 +57,7 @@ void dirigir(int q_km){
 		//SE CASO O KM FOR MAIS QUE O GAS
 		if(q_km > gas || q_km == gas && gas > 0)
 		{
-		//SE O QUE A GENTE ANDAR FOR MAIOR DO QUE O G¡S
+		//SE O QUE A GENTE ANDAR FOR MAIOR DO QUE O G√ÅS
 			System.out.println("tanque vazio apos andar " + gas + "km");
 			km += gas;
 			gas = 0;
@@ -76,21 +79,14 @@ void dirigir(int q_km){
 		System.out.println("tanque vazio");	
 	}
 		
-		
-		
-	
-	
-	
-	
 	if(pessoas_no_carro == 0) 
 	{
-		System.out.println("N„o tem ninguÈm no carro,carro est· parado");
+		System.out.println("N√£o tem ningu√©m no carro,carro est√° parado");
 		return;
-	}
-
-	
+	}	
 }
 
+//STATUS
 public String toString() {
     return "carro : pessoas:" + pessoas_no_carro + " gas:" + gas + " km:" + km;
 }
@@ -99,15 +95,13 @@ public static void main(String[] args) {
 	carro gol = new carro(0,0,0,0,0); // int pessoas_no_carro,int gas,int km,int q_gas,int q_km
 	
 	
-	gol.abastecer(400);
-	gol.embarcar();
-	gol.dirigir(100);
+	gol.abastecer(400);//COLOCANDO 400 DE GASOLINA NO TANQUE QUE CABE 100 NO M√ÅXIMO
+	gol.embarcar();//PRIMEIRA PESSOA ENTRA NO CARRO
+	gol.dirigir(100);//GASTANTANDO TODA A GASOLINA
 	System.out.println(gol);
-	gol.desembarcar();
+	gol.desembarcar();//PESSOA SAINDO DO CARRO
 	System.out.println(gol);
-	gol.dirigir(10);
-
-	
+	gol.dirigir(10);//N√ÉO TEM NINGU√âM NO CARRO
 }
 	
 	
