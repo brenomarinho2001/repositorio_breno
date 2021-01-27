@@ -3,6 +3,10 @@ package tamagochi;
 public class Tamagochi {
 	//ATRIBUTOS
 	
+	//OUTROS
+	 int diamantes;
+	 int idade;
+	
 	//ENERGIA
 	private int energy;
 	private int energyMax;
@@ -30,6 +34,8 @@ public class Tamagochi {
 		this.hungryMax = hungryMax;
 		this.cleanMax = cleanMax;
 		this.clean = cleanMax;
+		this.idade = 0;
+        this.diamantes = 0;
 		
 	}
 
@@ -96,7 +102,7 @@ public class Tamagochi {
 
 	public String toString(){
 		 	System.out.println("-------MENU----------");
-	        return "Sua energia é: " + energy + "/" + energyMax + " Sua fome é: " + hungry + "/" + hungryMax + " Sua limpeza é: "  + this.getClean() + "/" + this.cleanMax; 
+	        return "Sua energia é: " + energy + "/" + energyMax + " Sua fome é: " + hungry + "/" + hungryMax + " Sua limpeza é: "  + this.getClean() + "/" + this.cleanMax + " IDADE: " + this.idade ; 
 	    }
 	
 	
@@ -111,6 +117,7 @@ public class Tamagochi {
 	System.out.println("---VOCÊ ACABOU DE BRINCAR!---");
 	if(this.getClean() > 0) {
 	this.setClean(this.getClean() - 2);
+	this.idade += 1;
 	}
 	
 	}
@@ -131,6 +138,7 @@ public class Tamagochi {
 	public void comer() {
 		if(this.isVivo() && this.getHungry() <= this.getHungryMax() && this.getHungry() > 0) {	
 		System.out.println("VOCÊ SE ALIMENTOU!! E PERDEU DOIS DE FOME!");
+		this.idade += 1;
 		this.setHungry(this.getHungry()-2);
 		}
 		
@@ -148,6 +156,7 @@ public class Tamagochi {
 		if(this.getEnergy() < this.getEnergyMax())
 		{
 			System.out.println("VOCÊ RECUPEROU 2 DE ENERGIA");
+			this.idade += 1;
 			this.setEnergy(this.getEnergy() + 2);
 		}
 	}
