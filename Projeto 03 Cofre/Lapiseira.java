@@ -1,5 +1,7 @@
 package lapiseira;
 
+import java.util.Scanner;
+
 //-----------------------------------CLASSE GRAFITE----------------------------------------------------
 class Grafite {
 	//ATRIBUTOS DO GRAFITE
@@ -43,18 +45,18 @@ public class Lapiseira {
 		 if(quebrada == false) {
 	        if (this.grafite != null)
 	        {
-	            System.out.println("H· um grafite");
+	            System.out.println("H√° um grafite");
 	        }
 	        else if (this.espessura < grafite.espessura) 
 	        {
-	            System.out.println("grafite n„o cabe na lapiseira");
+	            System.out.println("grafite n√£o cabe na lapiseira");
 	        } else {
 	            this.grafite = grafite;
 	            System.out.println("o grafite entrou");
 	        }
 	    }
 		 else {
-			 System.out.println("L·piseira est· quebrada");
+			 System.out.println("L√°piseira est√° quebrada");
 		 }
 	 }
 	 
@@ -71,9 +73,9 @@ public class Lapiseira {
 		 if(this.grafite.tamanho > 0) {
 		 if(this.grafite != null)
 		 {
-			System.out.println("VOC  EST¡ DESENHANDO :D ");
+			System.out.println("VOC√ä EST√Å DESENHANDO :D ");
 			this.grafite.tamanho-=1;
-			System.out.println("Seu grafite diminuiu de tamanho,seu tamanho agora È : " + this.grafite.tamanho);
+			System.out.println("Seu grafite diminuiu de tamanho,seu tamanho agora √© : " + this.grafite.tamanho);
 		 }
 		 }
 		 if(this.grafite.tamanho <= 0) {
@@ -82,7 +84,7 @@ public class Lapiseira {
 		 }
 	 }
 		 else {
-			 System.out.println("N√O EXISTE GRAFITE!!");
+			 System.out.println("N√ÉO EXISTE GRAFITE!!");
 		 }
 	 }
 	 
@@ -103,19 +105,17 @@ public class Lapiseira {
 	
 	
 	public static void main(String[] args) {
+		Scanner leitor = new Scanner(System.in);
+		
 		Lapiseira bic = new Lapiseira(.7f,"Azul",false);
 		
+		bic.cor = leitor.next();
+		bic.espessura = leitor.nextFloat();
+		bic.quebrada = leitor.nextBoolean();
 		
-		System.out.println(bic);
-		bic.inserir(new Grafite(.7f,3,0));
-		bic.desenhar();
-		bic.desenhar();
-		bic.inserir(new Grafite(.7f,3,5));
-		bic.desenhar();
-		bic.remover();
-		bic.desenhar();
 		
-	
+		
+         System.out.println(bic);
 	}
 	
 	
