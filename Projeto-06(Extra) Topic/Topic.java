@@ -74,16 +74,16 @@ public class Topic {
  void AdicionarPessoa(String n,int idade) {
 Pessoa p1 = new Pessoa(n,idade);
 
-int repitido = procurarPessoa(assento_n,p1.nome);
+int rep = procurarPessoa(assento_n,p1.nome);
 
-if(repitido != -1){
+if(rep != -1){
     System.out.println("O " + p1.nome + " JÁ COMPROU A PASSAGEM");
     return;
 }
 
-repitido = procurarPessoa(assento_p, p1.nome);
+rep = procurarPessoa(assento_p, p1.nome);
 
-if(repitido != -1){
+if(rep != -1){
     System.out.println("O " + p1.nome + " JÁ COMPROU A PASSAGEM");
     return;
 }
