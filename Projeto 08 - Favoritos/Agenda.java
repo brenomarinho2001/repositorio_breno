@@ -10,14 +10,14 @@ class Fone{
 	String desc; // A ETIQUETA 
     String numero_tel;  // Vetor que guarda telefones
     
-    //MÈtodos especiais
+    //M√©todos especiais
     Fone(String numero_tel, String desc) {
         this.numero_tel = numero_tel; 
         this.desc = desc; 
     }
     
     
-    //MOSTRANDO A DESCRI«√O E O numero_tel
+    //MOSTRANDO A DESCRI√á√ÉO E O numero_tel
     public String toString() {
         return this.desc + ":" + this.numero_tel;
     }
@@ -26,11 +26,11 @@ class Fone{
 
 class Contato{
 
-	Boolean favorito;// FAVORITO OU N√O?  
+	Boolean favorito;// FAVORITO OU N√ÉO?  
     ArrayList<Fone> lista; // array que guarda fones
 
     Contato() {
-        this.favorito = false; // se È ou n„o um contato favorito
+        this.favorito = false; // se √© ou n√£o um contato favorito
         this.lista = new ArrayList<Fone>(); // define a lista de numero_tels
     }
 
@@ -56,7 +56,7 @@ public class Agenda {
         this.listaDeContatos = new TreeMap<>();
     }
 	
-    boolean verificarnumero_tel(String number) {// VERIFICAR SE O numero_tel … VALIDO
+    boolean verificarnumero_tel(String number) {// VERIFICAR SE O numero_tel √â VALIDO
     	
     	 String numero_tel_escolhidos = "1234567890().";
         boolean resutado_r = true;
@@ -71,7 +71,7 @@ public class Agenda {
                 }
                 if (contagem == numero_tel_escolhidos.length()) {
                 	
-                    resutado_r = false;//SE ELE CHEGAR A SER IGUA QUER DIZENDO QUE ELE N√O … IGUAL A NENHUM DA LISTA
+                    resutado_r = false;//SE ELE CHEGAR A SER IGUA QUER DIZENDO QUE ELE N√ÉO √â IGUAL A NENHUM DA LISTA
                 }
             }
         }
@@ -80,7 +80,7 @@ public class Agenda {
     }
     
     
-    //VERIFICA SE O CONTATO EST¡ NA LISTA
+    //VERIFICA SE O CONTATO EST√Å NA LISTA
 	 boolean Verificacao_De_Contato(String n) {
          if (listaDeContatos.containsKey(n)) {
         	 
@@ -91,7 +91,7 @@ public class Agenda {
 	 }
 	
 
-	 //PEGAR O CONTATO DETERMINADO SE N√O ACHAR RETORNA NULL
+	 //PEGAR O CONTATO DETERMINADO SE N√ÉO ACHAR RETORNA NULL
 	 Contato getContato(String n) {
 		 
 	    if (listaDeContatos.containsKey(n)) {
@@ -107,16 +107,16 @@ public class Agenda {
 	 void adicionarFavorito(String n) {
 	        if (Verificacao_De_Contato(n) == true) {
 	        	
-	            if (getContato(n).favorito == true){ //VERIFICA SE O CONTATO EST¡ NA LISTA
-	                System.out.println("ESSE CONTATO J¡ EST¡ NA LISTA DE FAVORITOS!! :)");
+	            if (getContato(n).favorito == true){ //VERIFICA SE O CONTATO EST√Å NA LISTA
+	                System.out.println("ESSE CONTATO J√Å EST√Å NA LISTA DE FAVORITOS!! :)");
 	                return;
 	            }
 	            
-	            getContato(n).favorito = true; //SE N√O TIVER COLOCA ELE NA LISTA
+	            getContato(n).favorito = true; //SE N√ÉO TIVER COLOCA ELE NA LISTA
 	            return;
 	        }
 	        
-	        System.out.println("CONTATO N√O EXISTE");
+	        System.out.println("CONTATO N√ÉO EXISTE");
 	    }
 	 
 	 
@@ -126,14 +126,14 @@ public class Agenda {
 	        if (Verificacao_De_Contato(n) == true) {
 	        if (getContato(n).favorito == false){
 	        	
-	         System.out.println("ESSE CONTATO N√O … DA LISTA DE FAVORITOS");
+	         System.out.println("ESSE CONTATO N√ÉO √â DA LISTA DE FAVORITOS");
 	         return;
 	         }
 	        
 	        getContato(n).favorito = false;
 	        return;
 	        }
-	        System.out.println("CONTATO N√O EXISTE");
+	        System.out.println("CONTATO N√ÉO EXISTE");
 	    }
 	    
 	    
@@ -141,7 +141,7 @@ public class Agenda {
     //ADICIONAR CONTATO NO MAP
 	void adicionarContato(String n) {
         if (Verificacao_De_Contato(n) == true) { //SE CONTATO TIVER O MESMO n
-            System.out.println("CONTATO J¡ EXISTE");
+            System.out.println("CONTATO J√Å EXISTE");
             return;
         }
         listaDeContatos.put(n, new Contato()); //ADICIONANDO CONTATO
@@ -161,7 +161,7 @@ public class Agenda {
             System.out.println("CONTATO INVALIDO");
             return;
         }
-        System.out.println("CONTATO N√O EXISTE");
+        System.out.println("CONTATO N√ÉO EXISTE");
     }
     
     void removerNumero(String nome, String index) {
@@ -174,12 +174,12 @@ public class Agenda {
             getContato(nome).lista.remove(Integer.parseInt(index));
             return;
         }
-        System.out.println("CONTATO N√O FOI ENCONTRADO");
+        System.out.println("CONTATO N√ÉO FOI ENCONTRADO");
     }
     
     
     
-    //MOSTRAR QUAIS CONTATOS S√O FAVORITOS
+    //MOSTRAR QUAIS CONTATOS S√ÉO FAVORITOS
     void favoritos (){
     	//Cria novo MAP AUXILIZAR PARA FAVORITOS
         Map<String, Contato> a_x = new TreeMap<>();
@@ -195,7 +195,7 @@ public class Agenda {
     
     
 
-    //SE FOR FAVORITO ELE MOSTRA O < sen„o ele mostra o -
+    //SE FOR FAVORITO ELE MOSTRA O < sen√£o ele mostra o -
     String dar_favorito (Boolean bool){
     	
     	//BOOL SE ELE FOR FAVORITO = TRUE
@@ -205,7 +205,7 @@ public class Agenda {
         return "- ";
     }
     
-    //M…TODO TO STRING
+    //M√âTODO TO STRING
     public String toString(){
         String a_x = "";
         for (Map.Entry<String, Contato> entry : listaDeContatos.entrySet()){
@@ -221,25 +221,25 @@ public class Agenda {
 		 System.out.println(ag1);
 		
 		 System.out.println("---------INICIANDO AGENDA --------");
-		 System.out.println(" COMANDOS 1 ADD_C (STRING) " + "\n COMANDOS 2 STOP (DAR UM BREAK NO WHILE)" + "\n COMANDOS 3 REMOVE_C (STRING) " + "\n ADD_NUM (STRING) " + "\n AGENDA (MOSTRA QUEM EST¡ NA AGENDA) " + "\n ADD_FAV (STRING) " + "\n REMOVE_FAV (STRING) ");
+		 System.out.println(" COMANDOS 1 ADD_C (STRING) " + "\n COMANDOS 2 STOP (DAR UM BREAK NO WHILE)" + "\n COMANDOS 3 REMOVE_C (STRING) " + "\n ADD_NUM (STRING) " + "\n AGENDA (MOSTRA QUEM EST√Å NA AGENDA) " + "\n ADD_FAV (STRING) " + "\n REMOVE_FAV (STRING) ");
 		while(true){
 	        String line = scanner.nextLine();
 	        String ui[] = line.split(" ");
 	        if (ui[0].equals("ADD_C")){
 	            ag1.adicionarContato(ui[1]);
-	        } else if(ui[0].equals("STOP")){
-	            break;
-	        } else if(ui[0].equals("REMOVE_C")){
+	        }else if(ui[0].equals("REMOVE_C")){
 	            ag1.removerContato(ui[1]);
+	        }else if(ui[0].equals("STOP")){
+	            break;
+	        }else if (ui[0].equals("ADD_FAV")){
+	            ag1.adicionarFavorito(ui[1]);
+	        }else if (ui[0].equals("AGENDA")){
+	            System.out.println(ag1);
 	        }else if(ui[0].equals("ADD_NUM")){
 	            ag1.AdicionarNumero_Tel(ui[1], ui[2], ui[3]);;
 	        } else if (ui[0].equals("REMOVE_NUM")){
 	            ag1.removerNumero(ui[1], ui[2]);
-	        } else if (ui[0].equals("AGENDA")){
-	            System.out.println(ag1);
-	        } else if (ui[0].equals("ADD_FAV")){
-	            ag1.adicionarFavorito(ui[1]);
-	        } else if (ui[0].equals("REMOVE_FAV")){
+	        }else if (ui[0].equals("REMOVE_FAV")){
 	            ag1.removerFavorito(ui[1]);
 	            } else {
 	            System.out.println("COMANDO INVALIDO");
